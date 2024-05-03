@@ -19,11 +19,11 @@ def calcular_promedio(df, materia):
 
 def encontrar_calf_mas_altas(df, materia):
 
-    order = pd.DataFrame(df[['nombre', f'{materia}']]) # Creo un df con el nombre (del estudiante) y la materia que se ingrese por parametros
+    dataframe = pd.DataFrame(df[['nombre', f'{materia}']]) # Creo un df con el nombre (del estudiante) y la materia que se ingrese por parametros
     
-    order.sort_values(by=f'{materia}', ascending=False) # utilizo la funcion sort_values(), pasandole como parametro la materia, en orden descendiente, por lo que la nota mayor estara en la posicion 0
-    nombre_alumno = order.iloc[0]['nombre'] # Accedo a esa posicion y obtengo el nombre
-    nota_alumno = order.iloc[0][f'{materia}'] # Accedo a la misma posicion y obtengo la nota
+    ordered_df = dataframe.sort_values(by=f'{materia}', ascending=False) # utilizo la funcion sort_values(), pasandole como parametro la materia, en orden descendiente, por lo que la nota mayor estara en la posicion 0
+    nombre_alumno = ordered_df.iloc[0]['nombre'] # Accedo a esa posicion y obtengo el nombre
+    nota_alumno = ordered_df.iloc[0][f'{materia}'] # Accedo a la misma posicion y obtengo la nota
 
     return f'la calificacion mas alta de {materia} es de {nombre_alumno} y es de {nota_alumno}' # devuelvo mensaje con las variables correspondientes
 

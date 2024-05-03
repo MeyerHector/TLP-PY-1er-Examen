@@ -3,14 +3,18 @@ from punto2 import df, promedio_notas_por_estudiante
 
 datos = promedio_notas_por_estudiante(df) # Obtengo el dataframe con la funcion anteriormente creada
 
-nombres = datos['nombre'] # Obtengo los nombres de los estudiantes y los promedios
-promedios = datos['promedio']
+def crear_grafico(datos):
 
-plt.bar(nombres, promedios) # Creo el gráfico de barras
+    nombres = datos['nombre'] # Obtengo los nombres de los estudiantes y los promedios
+    promedios = datos['promedio']
 
-# Personalizacion
-plt.xlabel('Estudiantes')
-plt.ylabel('Promedio de calificaciones')
-plt.title('Promedio de calificaciones por estudiante')
+    plt.bar(nombres, promedios) # Creo el gráfico de barras
 
-plt.show() # Muestro el gráfico
+    # Personalizacion
+    plt.xlabel('Estudiantes')
+    plt.ylabel('Promedio de calificaciones')
+    plt.title('Promedio de calificaciones por estudiante')
+
+    plt.show() # Muestro el gráfico
+
+crear_grafico(datos)
