@@ -1,4 +1,3 @@
-# datos_duplicados = [1, 1, 2, 3, 4, 5, 5, 6, 7] # En este caso utilice esta lista que cuenta con los datos 1 y 5 duplicados
 
 def eliminar_duplicados(datos_duplicados):
     if not datos_duplicados: # Verifico que se hayan mandado datos
